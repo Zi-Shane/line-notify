@@ -1,10 +1,10 @@
 # line-notify
 ## Usage
-- Install dependencies
+1. Install dependencies
     ```bash
     pip install -r requirements.txt
     ```
--  Change your own client_id, secret and url by secret_template.py
+2.  Change your own client_id, secret and url by secret_template.py
     1. run command: 
     ```bash
     cp secret_temple.py secret.py
