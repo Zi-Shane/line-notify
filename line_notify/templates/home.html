@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="tw">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        function oAuth2() {
+            var URL = 'https://notify-bot.line.me/oauth/authorize?';
+            URL += 'response_type=code';
+            URL += '&client_id=MP9iGXDbyDgqt3BmYBE6Ea';
+            URL += '&redirect_uri=http://dorm.rascal.com.tw:30000';
+            URL += '&scope=notify';
+            URL += '&state=NO_STATE';
+            window.location.href = URL;
+        }
+
+    </script>
+</head>
+
+<body>
+    <button onclick="oAuth2();"> 與 LineNotify 連動 </button>
+</body>
+
+</html>
