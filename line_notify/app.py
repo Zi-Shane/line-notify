@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template
+from line_notify.secret import line
 from line_notify.fetchToken import fetch_token
 from line_notify.sendSuccess import send_success_msg
 
@@ -12,12 +13,15 @@ def home():
         # log: first time get this page
         print('no code parameter')
 
-        return render_template('home.html')
+        return render_template('home.html', 
+                                uri=line['uri'], 
+                                client_id=line['client_id'])
     else:
         # log: Users' Authentication code
         print('Authentication code: ' + code)
         token = fetch_token(code)
         send_success_msg(token)
+
         return render_template('success.html')
 
 
