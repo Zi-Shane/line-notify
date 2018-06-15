@@ -17,12 +17,6 @@ def home():
         # log: Users' Authentication code
         print('Authentication code: ' + code)
         token = fetch_token(code)
-
-        # if token is None:
-        #     return render_template('fail.html')
-        # else:
-        #     send_success_msg(token)
-        #     return render_template('success.html')
         send_success_msg(token)
         return render_template('success.html')
 

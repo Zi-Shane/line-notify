@@ -19,19 +19,14 @@ def fetch_token(code):
     res_json = json.loads(res.text)
 
     token = res_json['access_token']
+
     # log: Users' Access_token
     print('Access_token: ' + token)
-
-    # if check_token_exist(token):
-    #     token = None
-    #     return token
-    # else:
-    #     save_token(token)
-    #     return token
     save_token(token)
+
+
     return token
 
-    
 def save_token(new_token):
     file_name = 'tokens.json'
     check_file_exist(file_name)
