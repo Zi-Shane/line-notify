@@ -18,7 +18,7 @@ services:
             dockerfile: Dockerfile
         image: line-notify
         container_name: line
-        # volumes:
-        #     - "../line-notify/web:/app"
+        volumes:
+            - "./flask/tokens.json:/app/tokens.json"
         # command: [ "uwsgi", "--ini", "uwsgi.ini" ]
 
