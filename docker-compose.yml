@@ -1,0 +1,24 @@
+version: '3.1'
+
+services:
+    nginx:
+        image: nginx
+        container_name: webserver
+        ports:
+            - "30000:30000"
+            - "80:80"
+            - "443:443"
+        volumes:
+            - "./nginx/nginx.conf:/etc/nginx/conf.d"
+            - "./nginx/static:/usr/share/nginx/html"
+            # - "./nginx/ssl:/etc/nginx/ssl"
+    line:
+        build:
+            context: ./flask
+            dockerfile: Dockerfile
+        image: line-notify
+        container_name: line
+        # volumes:
+        #     - "../line-notify/web:/app"
+        # command: [ "uwsgi", "--ini", "uwsgi.ini" ]
+

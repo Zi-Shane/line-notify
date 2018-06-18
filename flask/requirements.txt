@@ -13,4 +13,5 @@ query-string==1.0.2
 request==1.0.2
 requests==2.19.0
 urllib3==1.23
+uWSGI==2.0.17
 Werkzeug==0.14.1

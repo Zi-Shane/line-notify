@@ -3,3 +3,5 @@ tokens.json
 line_notify/secret.py
 __pycache__/
 .vscode/
+.well-known
+.DS_Store

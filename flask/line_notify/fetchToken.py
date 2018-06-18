@@ -15,7 +15,8 @@ def fetch_token(code):
     }
 
     res = requests.post('https://notify-bot.line.me/oauth/token', 
-                        headers=headers, data=payload)
+                        headers=headers, 
+                        data=payload)
     res_json = json.loads(res.text)
 
     token = res_json['access_token']
