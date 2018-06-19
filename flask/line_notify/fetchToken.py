@@ -32,7 +32,7 @@ def save_token(new_token):
     file_name = 'tokens.json'
     check_file_exist(file_name)
 
-    with open('tokens.json', 'r', encoding='utf-8') as file:
+    with open(file_name, 'r', encoding='utf-8') as file:
         tokens = json.load(file)
         
     tokens.append(new_token)

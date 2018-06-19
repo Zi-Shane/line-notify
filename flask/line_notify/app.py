@@ -1,7 +1,8 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, jsonify
 from line_notify.secret import line
 from line_notify.fetchToken import fetch_token
 from line_notify.sendSuccess import send_success_msg
+import json
 
 
 app = Flask(__name__)
@@ -23,6 +24,13 @@ def home():
         send_success_msg(token)
 
         return render_template('success.html')
+
+@app.route("/json")
+def token_api():
+    with open('tokens.json', 'r', encoding='utf-8') as file:
+        tokens = json.load(file)
+
+    return jsonify(tokens)
 
 
 if __name__ == "__main__":
